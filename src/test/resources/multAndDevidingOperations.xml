@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite3" thread-count="1">
+    <test name="multAndDevidingOperations">
+        <classes>
+            <class name="hw1.TestMultOperation"/>
+            <class name="hw1.TestDivOperation"/>
+        </classes>
+    </test>
+</suite>

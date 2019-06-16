@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite1" thread-count="1">
+    <test name="Smoke">
+        <classes>
+            <class name="hw1.TestMultOperation"/>
+            <class name="hw1.TestDivOperation"/>
+            <class name="hw1.TestIsNegativeOperation"/>
+            <class name="hw1.TestIsPositiveOperation"/>
+            <class name="hw1.TestSqrtOperation"/>
+            <class name="hw1.TestSubOperation"/>
+            <class name="hw1.TestSumOperation"/>
+        </classes>
+    </test>
+</suite>
