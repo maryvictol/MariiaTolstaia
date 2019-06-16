@@ -2,8 +2,8 @@
 <suite name="Suite2" thread-count="1">
     <test name="sumAndSubOperations">
         <classes>
-            <class name="hw1.TestSubOperation"/>
-            <class name="hw1.TestSumOperation"/>
+            <class name="hw1.SubOperationTest"/>
+            <class name="hw1.SumOperationTest"/>
         </classes>
     </test>
 </suite>

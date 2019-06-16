@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
-public class TestSumOperation {
+public class SumOperationTest {
 
     private Calculator calculator;
 

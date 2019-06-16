@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestIsNegativeOperation {
+public class IsNegativeOperationTest {
 
     private Calculator calculator;
 

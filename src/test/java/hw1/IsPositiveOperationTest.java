@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestSqrtOperation {
+public class IsPositiveOperationTest {
 
     private Calculator calculator;
 
@@ -19,16 +19,15 @@ public class TestSqrtOperation {
     @DataProvider
     public Object[][] testData() {
         return new Object[][]{
-                {1, 1},
-                {4.0, 2.0},
-                {0.0, 0.0},
-                {-9.0, 3.0}
+                {1, true},
+                {0, false},
+                {-100, false}
         };
     }
 
     @Test(dataProvider = "testData")
-    public void testSqrt(double a, double expect) {
-        double actual = calculator.sqrt(a);
+    public void testIsPositive(long a, boolean expect) {
+        boolean actual = calculator.isPositive(a);
         assertEquals(actual, expect);
     }
 }

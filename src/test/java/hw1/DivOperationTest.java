@@ -10,7 +10,7 @@ import java.math.RoundingMode;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestDivOperation {
+public class DivOperationTest {
 
     private Calculator calculator;
 

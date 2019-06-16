@@ -2,8 +2,8 @@
 <suite name="Suite3" thread-count="1">
     <test name="multAndDevidingOperations">
         <classes>
-            <class name="hw1.TestMultOperation"/>
-            <class name="hw1.TestDivOperation"/>
+            <class name="hw1.MultOperationTest"/>
+            <class name="hw1.DivOperationTest"/>
         </classes>
     </test>
 </suite>
