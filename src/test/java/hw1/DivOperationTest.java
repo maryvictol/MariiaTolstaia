@@ -12,8 +12,11 @@ import static org.testng.Assert.assertEquals;
 
 public class DivOperationTest {
 
+    // TODO IMHO it will be better extract this field to the base class
     private Calculator calculator;
 
+    // TODO IMHO it will be better extract this hook to the base class
+    // TODO Why do you decide use BeforeTestHook?
     @BeforeTest
     public void initialization() {
         calculator = new Calculator();
@@ -47,6 +50,7 @@ public class DivOperationTest {
     @Test(dataProvider = "testDoubleData")
     public void testDivForDouble(double a, double b, double expect) {
         double actual = calculator.div(a,b);
+        // TODO Why do you use BigDecimal?
         assertEquals(new BigDecimal(actual).setScale(2, RoundingMode.HALF_UP),
                      new BigDecimal(expect).setScale(2, RoundingMode.HALF_UP));
     }
