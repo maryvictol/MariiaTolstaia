@@ -51,8 +51,7 @@ public class DivOperationTest extends BaseTest{
     public void testDivForDouble(double a, double b, double expect) {
         double actual = calculator.div(a,b);
         // TODO Why do you use BigDecimal?
-        assertEquals(new BigDecimal(actual).setScale(2, RoundingMode.HALF_UP),
-                     new BigDecimal(expect).setScale(2, RoundingMode.HALF_UP));
+        assertEquals(Math.round(actual * 100) / 100.0, Math.round(expect * 100) / 100.0);
     }
 
     @Test(expectedExceptions = NumberFormatException.class)
