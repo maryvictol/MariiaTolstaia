@@ -106,8 +106,6 @@
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <!-- TODO project does not compiled. Please check suite property -->
-                        <!-- Fixed -->
                         <suiteXmlFile>${suite.xml}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
