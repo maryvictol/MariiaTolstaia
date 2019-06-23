@@ -8,11 +8,8 @@ import static org.testng.Assert.assertEquals;
 
 public class SumOperationTest extends BaseTest {
 
-    // TODO IMHO it will be better extract this field to the base class
     //private Calculator calculator;
 
-    // TODO IMHO it will be better extract this hook to the base class
-    // TODO Why do you decide use BeforeTestHook?
     /*@BeforeTest
     public void initialization() {
         calculator = new Calculator();
