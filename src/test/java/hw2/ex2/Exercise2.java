@@ -69,6 +69,7 @@ public class Exercise2 extends BaseTest {
 
         //12.	Assert that for each checkbox there is an individual log row and value is corresponded
         // to the status of checkbox.
+        // TODO Is it ossible send checkbox name as a parameter
         checkLogRecord("Water: condition changed to true");
         checkLogRecord("Wind: condition changed to true");
 
@@ -77,12 +78,14 @@ public class Exercise2 extends BaseTest {
 
         //14.	Assert that for radiobutton there is a log row and value is corresponded to
         // the status of radiobutton.
+        // TODO Is it ossible send radiobutton name as a parameter
         checkLogRecord("metal: value changed to Selen");
 
         //15.	Select in dropdown
         new Select(driver.findElement(By.cssSelector("div.colors > select"))).selectByVisibleText("Yellow");
 
         //16.	Assert that for dropdown there is a log row and value is corresponded to the selected value.
+        // TODO Is it ossible send dropdown name as a parameter
         checkLogRecord("Colors: value changed to Yellow");
 
         //17.	Unselect and assert checkboxes
@@ -90,9 +93,11 @@ public class Exercise2 extends BaseTest {
 
 
         //18.	Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox.
+        // TODO Is it ossible send checkbox name as a parameter
         checkLogRecord("Water: condition changed to false");
         checkLogRecord("Wind: condition changed to false");
 
+        // TODO driver.close could be extracted to the AfterMethod hook
         driver.close();
 
     }

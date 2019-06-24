@@ -16,6 +16,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
+// TODO It will be better use only hamcrest assertions in the project if you started using them
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -59,6 +60,7 @@ public class BaseTest {
 
     protected void checkDisplayedListOfImagesElements(By by, int expectElementsNumber) {
         List<WebElement> elements = driver.findElements(by);
+        // TODO It is better use assertEquals here
         assertTrue(elements.size() == expectElementsNumber);
         SoftAssert softAssert = new SoftAssert();
         for (WebElement icon : elements) {
@@ -87,11 +89,17 @@ public class BaseTest {
         assertThat(listElements,hasItems(in(expectListElements)));
     }
 
+    // TODO Required instead of Requered
     protected void markRequeredCheckboxes(List<WebElement> checkBoxesList ,List<String> expectCheckboxes){
+        /* TODO
+            It is better set for (String expectCheck : expectCheckboxes) as first loop
+            List of the expectedCheck boxes could be less then checkBoxesList
+         */
         for (WebElement checkBox : checkBoxesList) {
             for (String expectCheck : expectCheckboxes) {
                 if(checkBox.getText().equals(expectCheck)){
                     checkBox.click();
+                    // TODO add break after click it is reduce amount of operations
                 }
             }
         }
