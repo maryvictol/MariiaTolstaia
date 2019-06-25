@@ -1,4 +1,4 @@
-package hw2.ex2.enums;
+package hw2.enums;
 
 import java.util.Arrays;
 import java.util.List;

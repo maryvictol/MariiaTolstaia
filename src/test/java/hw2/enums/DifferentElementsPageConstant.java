@@ -1,4 +1,4 @@
-package hw2.ex2.enums;
+package hw2.enums;
 import java.util.Arrays;
 import java.util.List;
 
@@ -9,7 +9,9 @@ public enum DifferentElementsPageConstant {
 
     MARKED_CHECKBOXES(Arrays.asList("Water",  "Wind")),
 
-    MARKED_RADIOBUTTONS(Arrays.asList("Selen"));
+    MARKED_RADIOBUTTONS(Arrays.asList("Selen")),
+
+    SELECTED_COLOR("Yellow");
 
 
     private String data;

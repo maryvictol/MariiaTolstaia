@@ -8,12 +8,12 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static hw2.ex2.enums.MainPageConstants.*;
-import static hw2.ex2.enums.ConnectConstants.*;
-import static hw2.ex2.enums.DifferentElementsPageConstant.*;
+import static hw2.enums.MainPageConstants.*;
+import static hw2.enums.DifferentElementsPageConstant.*;
+import static hw2.enums.UserCredentials.*;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 
 public class Exercise2 extends BaseTest {
 
@@ -26,10 +26,10 @@ public class Exercise2 extends BaseTest {
         assertBrowserTitle("Home Page");
 
         //3.	Perform login
-        login(USER_LOGIN.getData(), PASSWORD.getData());
+        login(PITER_CHAILOVSKII);
 
         //4.	Assert User name in the left-top side of screen that user is loggined
-        assertEquals(driver.findElement(By.id("user-name")).getText(),USER.getData());
+        assertThat(driver.findElement(By.id("user-name")).getText(), is(PITER_CHAILOVSKII.user));
 
         //5.	Click on "Service" subcategory in the header and check that drop down contains options
         driver.findElement(By.className("dropdown")).click();
@@ -49,56 +49,61 @@ public class Exercise2 extends BaseTest {
         //8.	Check interface on Different elements page, it contains all needed elements
         // (4 checkboxes, 4 radios, 1 dropdown, 2 buttons)
         List<WebElement> checkBoxesList = driver.findElements(By.className("label-checkbox"));
-        assertEquals(checkBoxesList.size(), COUNT_CHECKBOXES.getCount());
+        assertThat(checkBoxesList.size(), is(COUNT_CHECKBOXES.getCount()));
 
         List<WebElement> radioButtonsList = driver.findElements(By.className("label-radio"));
-        assertEquals(radioButtonsList.size(), COUNT_RADIOBUTTONS.getCount());
+        assertThat(radioButtonsList.size(), is(COUNT_RADIOBUTTONS.getCount()));
 
-        checkElementIsDisplayed(By.className("colors"), "Drop-down isn't displayed");
-        checkElementIsDisplayed(By.xpath("//div[@class='main-content-hg']/button"), "Default button isn't displayed");
-        checkElementIsDisplayed(By.xpath("//div[@class='main-content-hg']/input"), "Default button isn't displayed");
+        checkElementIsDisplayed(By.className("colors"));
+        checkElementIsDisplayed(By.xpath("//div[@class='main-content-hg']/button"));
+        checkElementIsDisplayed(By.xpath("//div[@class='main-content-hg']/input"));
 
         //9.	Assert that there is Right Section
-        checkElementIsDisplayed(By.id("mCSB_2"), "Right Section isn't displayed");
+        checkElementIsDisplayed(By.id("mCSB_2"));
 
         //10.	Assert that there is Left Section
-        checkElementIsDisplayed(By.id("mCSB_2"), "Left Section isn't displayed");
+        checkElementIsDisplayed(By.id("mCSB_2"));
 
         //11.	Select checkboxes
-        markRequeredCheckboxes(checkBoxesList, MARKED_CHECKBOXES.getItems());
+        markRequiredCheckboxes(checkBoxesList, MARKED_CHECKBOXES.getItems());
 
         //12.	Assert that for each checkbox there is an individual log row and value is corresponded
         // to the status of checkbox.
-        // TODO Is it ossible send checkbox name as a parameter
-        checkLogRecord("Water: condition changed to true");
-        checkLogRecord("Wind: condition changed to true");
+        // TODO Is it ossible send checkbox name as a parameter - DONE
+        for (String item : MARKED_CHECKBOXES.getItems()) {
+            checkLogRecord(item + ": condition changed to true");
+        }
 
         //13.	Select radio
-        markRequeredCheckboxes(radioButtonsList, MARKED_RADIOBUTTONS.getItems());
+        markRequiredCheckboxes(radioButtonsList, MARKED_RADIOBUTTONS.getItems());
 
         //14.	Assert that for radiobutton there is a log row and value is corresponded to
         // the status of radiobutton.
-        // TODO Is it ossible send radiobutton name as a parameter
-        checkLogRecord("metal: value changed to Selen");
+        // TODO Is it ossible send radiobutton name as a parameter - DONE
+        for (String item : MARKED_RADIOBUTTONS.getItems()) {
+            checkLogRecord("metal: value changed to " + item);
+        }
 
         //15.	Select in dropdown
-        new Select(driver.findElement(By.cssSelector("div.colors > select"))).selectByVisibleText("Yellow");
+        new Select(driver.findElement(By.cssSelector("div.colors > select")))
+                .selectByVisibleText(SELECTED_COLOR.getData());
 
         //16.	Assert that for dropdown there is a log row and value is corresponded to the selected value.
-        // TODO Is it ossible send dropdown name as a parameter
-        checkLogRecord("Colors: value changed to Yellow");
+        // TODO Is it ossible send dropdown name as a parameter - DONE
+        checkLogRecord("Colors: value changed to " + SELECTED_COLOR.getData());
 
         //17.	Unselect and assert checkboxes
-        markRequeredCheckboxes(checkBoxesList, MARKED_CHECKBOXES.getItems());
+        markRequiredCheckboxes(checkBoxesList, MARKED_CHECKBOXES.getItems());
 
 
         //18.	Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox.
-        // TODO Is it ossible send checkbox name as a parameter
-        checkLogRecord("Water: condition changed to false");
-        checkLogRecord("Wind: condition changed to false");
+        // TODO Is it ossible send checkbox name as a parameter - DONE
+        for (String item : MARKED_CHECKBOXES.getItems()) {
+            checkLogRecord(item + ": condition changed to false");
+        }
 
-        // TODO driver.close could be extracted to the AfterMethod hook
-        driver.close();
+        // TODO driver.close could be extracted to the AfterMethod hook - DONE
+
 
     }
 

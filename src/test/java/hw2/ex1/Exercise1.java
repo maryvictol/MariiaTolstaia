@@ -5,8 +5,8 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
-import static hw2.ex2.enums.MainPageConstants.*;
-import static hw2.ex2.enums.ConnectConstants.*;
+import static hw2.enums.MainPageConstants.*;
+import static hw2.enums.UserCredentials.*;
 import static org.testng.Assert.assertTrue;
 
 public class Exercise1 extends BaseTest {
@@ -19,12 +19,12 @@ public class Exercise1 extends BaseTest {
         assertBrowserTitle("Home Page");
 
         //3. Perform login
-        // TODO please look to the comment in the ConnectConstatnts enum
-        login(USER_LOGIN.getData(), PASSWORD.getData());
+        // TODO please look to the comment in the ConnectConstatnts enum - DONE
+        login(PITER_CHAILOVSKII);
 
         //4. Assert User name in the left-top side of screen that user is loggined
-        // TODO please look to the comment in the ConnectConstatnts enum
-        assertEquals(driver.findElement(By.id("user-name")).getText(),USER.getData());
+        // TODO please look to the comment in the ConnectConstatnts enum - DONE
+        assertEquals(driver.findElement(By.id("user-name")).getText(),PITER_CHAILOVSKII.user);
 
         //5. Assert Browser title
         assertBrowserTitle("Home Page");
@@ -44,11 +44,11 @@ public class Exercise1 extends BaseTest {
         checkTextOnPage(By.cssSelector(".main-txt"), SECOND_MAIN_HEADER.getData());
 
         //10. Assert that there is the iframe in the center of page
-        checkElementIsDisplayed(By.id("iframe"), "Iframe isn't displayed");
+        checkElementIsDisplayed(By.id("iframe"));
 
         //11. Switch to the iframe and check that there is Epam logo in the left top conner of iframe
         driver.switchTo().frame(driver.findElement(By.id("iframe")));
-        checkElementIsDisplayed(By.id("epam_logo"), "Epam logo isn't displayed");
+        checkElementIsDisplayed(By.id("epam_logo"));
 
         //12. Switch to original window back
         driver.switchTo().defaultContent();
@@ -68,6 +68,6 @@ public class Exercise1 extends BaseTest {
 
         //17. Close Browser
         // TODO driver.close could be extracted to the AfterMethod hook
-        driver.close();
+        //Done
     }
 }

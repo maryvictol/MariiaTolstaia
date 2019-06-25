@@ -1,10 +1,12 @@
 package hw2;
 
-import hw2.ex2.enums.ConnectConstants;
+import hw2.enums.ConnectConstants;
+import hw2.enums.UserCredentials;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.asserts.SoftAssert;
@@ -16,9 +18,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
-// TODO It will be better use only hamcrest assertions in the project if you started using them
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+// TODO It will be better use only hamcrest assertions in the project if you started using them   - DONE
 
 public class BaseTest {
 
@@ -38,15 +38,20 @@ public class BaseTest {
         driver.get(ConnectConstants.URL.getData());
     }
 
-    protected void login(String user, String password) {
+    @AfterMethod
+    public  void closeDriver(){
+        driver.close();
+    }
+
+    protected void login(UserCredentials user) {
         driver.findElement(By.id("user-icon")).click();
-        driver.findElement(By.id("name")).sendKeys(user);
-        driver.findElement(By.cssSelector("#password")).sendKeys(password);
+        driver.findElement(By.id("name")).sendKeys(user.login);
+        driver.findElement(By.cssSelector("#password")).sendKeys(user.password);
         driver.findElement(By.id("login-button")).click();
     }
 
     protected void assertBrowserTitle (String expectTitle){
-        assertEquals(driver.getTitle(), expectTitle);
+        assertThat(driver.getTitle(), is(equalTo(expectTitle)));
     }
 
     protected void checkListOfTextElements(By by, List<String> expectListElements) {
@@ -55,13 +60,13 @@ public class BaseTest {
                 .stream()
                 .map(WebElement::getText)
                 .collect(Collectors.toList());
-        assertEquals(listElements, expectListElements);
+        assertThat(listElements, is(equalTo(expectListElements)));
     }
 
     protected void checkDisplayedListOfImagesElements(By by, int expectElementsNumber) {
         List<WebElement> elements = driver.findElements(by);
-        // TODO It is better use assertEquals here
-        assertTrue(elements.size() == expectElementsNumber);
+        // TODO It is better use assertEquals here - DONE
+        assertThat(elements.size(), is(equalTo(expectElementsNumber)));
         SoftAssert softAssert = new SoftAssert();
         for (WebElement icon : elements) {
             softAssert.assertTrue(icon.isDisplayed());
@@ -71,12 +76,12 @@ public class BaseTest {
 
     protected void checkTextOnPage(By by, String expectText) {
         WebElement actualText = driver.findElement(by);
-        assertTrue(actualText.isDisplayed());
-        assertEquals(actualText.getText(), expectText);
+        assertThat(actualText.isDisplayed(), is(true));
+        assertThat(actualText.getText(), is(equalTo(expectText)));
     }
 
-    protected void checkElementIsDisplayed(By by, String comment){
-        assertTrue(driver.findElement(by).isDisplayed(), comment);
+    protected void checkElementIsDisplayed(By by){
+        assertThat(driver.findElement(by).isDisplayed(), is(true));
     }
 
     protected void checkContainListOfElements(By by, List<String> expectListElements) {
@@ -89,17 +94,18 @@ public class BaseTest {
         assertThat(listElements,hasItems(in(expectListElements)));
     }
 
-    // TODO Required instead of Requered
-    protected void markRequeredCheckboxes(List<WebElement> checkBoxesList ,List<String> expectCheckboxes){
+    // TODO Required instead of Requered - DONE
+    protected void markRequiredCheckboxes(List<WebElement> checkBoxesList ,List<String> expectCheckboxes){
         /* TODO
             It is better set for (String expectCheck : expectCheckboxes) as first loop
-            List of the expectedCheck boxes could be less then checkBoxesList
+            List of the expectedCheck boxes could be less then checkBoxesList    - DONE
          */
-        for (WebElement checkBox : checkBoxesList) {
-            for (String expectCheck : expectCheckboxes) {
+        for (String expectCheck : expectCheckboxes) {
+            for (WebElement checkBox : checkBoxesList) {
                 if(checkBox.getText().equals(expectCheck)){
                     checkBox.click();
-                    // TODO add break after click it is reduce amount of operations
+                    // TODO add break after click it is reduce amount of operations    - DONE
+                    break;
                 }
             }
         }
