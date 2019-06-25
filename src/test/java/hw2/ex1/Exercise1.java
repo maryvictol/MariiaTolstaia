@@ -19,11 +19,9 @@ public class Exercise1 extends BaseTest {
         assertBrowserTitle("Home Page");
 
         //3. Perform login
-        // TODO please look to the comment in the ConnectConstatnts enum - DONE
         login(PITER_CHAILOVSKII);
 
         //4. Assert User name in the left-top side of screen that user is loggined
-        // TODO please look to the comment in the ConnectConstatnts enum - DONE
         assertEquals(driver.findElement(By.id("user-name")).getText(),PITER_CHAILOVSKII.user);
 
         //5. Assert Browser title
@@ -67,7 +65,6 @@ public class Exercise1 extends BaseTest {
         assertTrue(driver.findElement(By.className("footer-bg")).isDisplayed());
 
         //17. Close Browser
-        // TODO driver.close could be extracted to the AfterMethod hook
         //Done
     }
 }
