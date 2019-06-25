@@ -18,8 +18,6 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
-// TODO It will be better use only hamcrest assertions in the project if you started using them   - DONE
-
 public class BaseTest {
 
     protected WebDriver driver;
@@ -51,6 +49,7 @@ public class BaseTest {
     }
 
     protected void assertBrowserTitle (String expectTitle){
+        // TODO is(...) not required here
         assertThat(driver.getTitle(), is(equalTo(expectTitle)));
     }
 
@@ -60,12 +59,13 @@ public class BaseTest {
                 .stream()
                 .map(WebElement::getText)
                 .collect(Collectors.toList());
+        // TODO is(...) not required here
         assertThat(listElements, is(equalTo(expectListElements)));
     }
 
     protected void checkDisplayedListOfImagesElements(By by, int expectElementsNumber) {
         List<WebElement> elements = driver.findElements(by);
-        // TODO It is better use assertEquals here - DONE
+        // TODO is(...) not required here
         assertThat(elements.size(), is(equalTo(expectElementsNumber)));
         SoftAssert softAssert = new SoftAssert();
         for (WebElement icon : elements) {
@@ -76,7 +76,9 @@ public class BaseTest {
 
     protected void checkTextOnPage(By by, String expectText) {
         WebElement actualText = driver.findElement(by);
+        // TODO is(...) not required here
         assertThat(actualText.isDisplayed(), is(true));
+        // TODO is(...) not required here
         assertThat(actualText.getText(), is(equalTo(expectText)));
     }
 
@@ -91,20 +93,16 @@ public class BaseTest {
                 .map(WebElement::getText)
                 .map(String::toUpperCase)
                 .collect(Collectors.toList());
+        // TODO is(...) not required here
         assertThat(listElements,hasItems(in(expectListElements)));
     }
 
     // TODO Required instead of Requered - DONE
     protected void markRequiredCheckboxes(List<WebElement> checkBoxesList ,List<String> expectCheckboxes){
-        /* TODO
-            It is better set for (String expectCheck : expectCheckboxes) as first loop
-            List of the expectedCheck boxes could be less then checkBoxesList    - DONE
-         */
         for (String expectCheck : expectCheckboxes) {
             for (WebElement checkBox : checkBoxesList) {
                 if(checkBox.getText().equals(expectCheck)){
                     checkBox.click();
-                    // TODO add break after click it is reduce amount of operations    - DONE
                     break;
                 }
             }
