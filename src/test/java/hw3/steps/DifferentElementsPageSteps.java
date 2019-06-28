@@ -31,18 +31,22 @@ public class DifferentElementsPageSteps extends BasePageSteps {
     }
 
     public void assertColorDropDownIsDisplayed() {
+        // TODO assertThat(differentElementsPage.getColorDropDown().isDisplayed())
         assertThat(differentElementsPage.getColorDropDown().isDisplayed(), is(true));
     }
 
     public void assertDefaultButtonIsDisplayed() {
+        // TODO assertThat(differentElementsPage.getDefaultButton().isDisplayed());
         assertThat(differentElementsPage.getDefaultButton().isDisplayed(), is(true));
     }
 
     public void assertButtonIsDisplayed() {
+        // TODO assertThat(differentElementsPage.getButton().isDisplayed());
         assertThat(differentElementsPage.getButton().isDisplayed(), is(true));
     }
 
     public void assertRightPanelIsDisplayed() {
+//        TODO assertThat(differentElementsPage.getRightPanel().isDisplayed());
         assertThat(differentElementsPage.getRightPanel().isDisplayed(), is(true));
     }
 

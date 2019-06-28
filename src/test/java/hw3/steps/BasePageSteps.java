@@ -15,6 +15,8 @@ public class BasePageSteps {
     protected WebDriver driver;
     protected BasePage basePage;
 
+    // TODO Could be protected
+    // TODO I guess you forgot parameter WebDriver driver here? :)
     public BasePageSteps() {
         this.driver = driver;
     }
@@ -27,6 +29,7 @@ public class BasePageSteps {
         assertThat(basePage.getBrowserTitle(), equalTo(expectTitle));
     }
 
+    // TODO assertLeftPanelUserName
     public void assertleftPanelUserName (String expectTitle){
         assertThat(basePage.getleftPanelUserName(), equalTo(expectTitle));
     }
