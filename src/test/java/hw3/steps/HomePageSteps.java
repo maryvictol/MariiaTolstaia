@@ -35,6 +35,7 @@ public class HomePageSteps extends BasePageSteps{
         softAssert.assertAll();
     }
 
+    // TODO checkIFrameIsDisplayed
     public void checkIframeIsDisplayed(){
         assertThat(homePage.getIframe().isDisplayed(), is(true));
     }
@@ -59,6 +60,7 @@ public class HomePageSteps extends BasePageSteps{
         checkTextOnPage(homePage.getSubHeader(), expectText);
     }
 
+    // TODO String expectText parameter unused here
     public void checkURLJdiGithubLink(String expectText) {
         assertEquals(homePage.getSubHeader().getAttribute("href"),
                 SUBHEADER_URL.getData());
@@ -73,6 +75,7 @@ public class HomePageSteps extends BasePageSteps{
     }
 
     public void checkEpamLogoIsDisplayed(){
+        // TODO It is enough assertThat(homePage.getEpamLogo().isDisplayed());
         assertThat(homePage.getEpamLogo().isDisplayed(), is(true));
     }
 }
