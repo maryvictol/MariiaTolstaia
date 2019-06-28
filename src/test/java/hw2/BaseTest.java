@@ -11,12 +11,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.asserts.SoftAssert;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 
 public class BaseTest {
 
@@ -60,13 +60,13 @@ public class BaseTest {
                 .map(WebElement::getText)
                 .collect(Collectors.toList());
         // TODO is(...) not required here
-        assertThat(listElements, is(equalTo(expectListElements)));
+        assertThat(listElements, equalTo(expectListElements));
     }
 
     protected void checkDisplayedListOfImagesElements(By by, int expectElementsNumber) {
         List<WebElement> elements = driver.findElements(by);
         // TODO is(...) not required here
-        assertThat(elements.size(), is(equalTo(expectElementsNumber)));
+        assertThat(elements.size(), equalTo(expectElementsNumber));
         SoftAssert softAssert = new SoftAssert();
         for (WebElement icon : elements) {
             softAssert.assertTrue(icon.isDisplayed());
@@ -79,7 +79,7 @@ public class BaseTest {
         // TODO is(...) not required here
         assertThat(actualText.isDisplayed(), is(true));
         // TODO is(...) not required here
-        assertThat(actualText.getText(), is(equalTo(expectText)));
+        assertThat(actualText.getText(), equalTo(expectText));
     }
 
     protected void checkElementIsDisplayed(By by){
