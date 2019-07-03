@@ -31,7 +31,7 @@ public class Exercise1 extends BaseTest {
         homePageSteps.login(PITER_CHAILOVSKII);
 
         //4. Assert User name in the left-top side of screen that user is loggined
-        homePageSteps.assertleftPanelUserName(PITER_CHAILOVSKII.user);
+        homePageSteps.assertLeftPanelUserName(PITER_CHAILOVSKII.user);
 
         //5. Assert Browser title
         homePageSteps.assertBrowserTitle("Home Page");

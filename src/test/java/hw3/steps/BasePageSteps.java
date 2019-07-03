@@ -17,9 +17,9 @@ public class BasePageSteps {
 
     // TODO Could be protected
     // TODO I guess you forgot parameter WebDriver driver here? :)
-    public BasePageSteps() {
+    /*public BasePageSteps(WebDriver driver) {
         this.driver = driver;
-    }
+    }*/
 
     public void login(UserCredentials user) {
         basePage.login(user);
@@ -30,8 +30,8 @@ public class BasePageSteps {
     }
 
     // TODO assertLeftPanelUserName
-    public void assertleftPanelUserName (String expectTitle){
-        assertThat(basePage.getleftPanelUserName(), equalTo(expectTitle));
+    public void assertLeftPanelUserName (String expectTitle){
+        assertThat(basePage.getLeftPanelUserName(), equalTo(expectTitle));
     }
 
     public void checkMenuHeaderSectionItems (List<String> expectListElement) {
@@ -48,7 +48,7 @@ public class BasePageSteps {
     }
 
     public void checkFooter() {
-        assertThat(basePage.getFooter().isDisplayed(), is(true));
+        assertThat("",basePage.getFooter().isDisplayed());
     }
 
     public void checkContainsListTopServiceDropDownOptions(List<String> expectListElements){

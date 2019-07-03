@@ -9,7 +9,6 @@ import org.testng.asserts.SoftAssert;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static hw3.enums.HomePageConstants.SUBHEADER_URL;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
@@ -60,10 +59,9 @@ public class HomePageSteps extends BasePageSteps{
         checkTextOnPage(homePage.getSubHeader(), expectText);
     }
 
-    // TODO String expectText parameter unused here
+    // TODO String expectText parameter unused here - done
     public void checkURLJdiGithubLink(String expectText) {
-        assertEquals(homePage.getSubHeader().getAttribute("href"),
-                SUBHEADER_URL.getData());
+        assertEquals(homePage.getSubHeader().getAttribute("href"),expectText);
     }
 
     public void switchToFrame() {
@@ -76,6 +74,6 @@ public class HomePageSteps extends BasePageSteps{
 
     public void checkEpamLogoIsDisplayed(){
         // TODO It is enough assertThat(homePage.getEpamLogo().isDisplayed());
-        assertThat(homePage.getEpamLogo().isDisplayed(), is(true));
+        assertThat("",homePage.getEpamLogo().isDisplayed());
     }
 }

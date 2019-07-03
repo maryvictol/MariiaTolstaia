@@ -68,7 +68,7 @@ public class BasePage {
     }
 
     // TODO getLeftPanelUserName
-    public String getleftPanelUserName(){
+    public String getLeftPanelUserName() {
         return leftPanelUserName.getText();
     }
 

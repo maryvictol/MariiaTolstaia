@@ -49,10 +49,30 @@
         <profile>
             <id>hw2AllTests</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.xml>src/test/resources/hw2AllTests.xml</suite.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>hw3AllTests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/hw3AllTests.xml</suite.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>hw4AllTests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/hw4AllTests.xml</suite.xml>
             </properties>
         </profile>
 
@@ -92,6 +112,19 @@
             <artifactId>webdrivermanager</artifactId>
             <version>3.6.1</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>5.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

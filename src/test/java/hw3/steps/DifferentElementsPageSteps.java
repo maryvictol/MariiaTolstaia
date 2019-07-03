@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 
 public class DifferentElementsPageSteps extends BasePageSteps {
@@ -32,22 +32,22 @@ public class DifferentElementsPageSteps extends BasePageSteps {
 
     public void assertColorDropDownIsDisplayed() {
         // TODO assertThat(differentElementsPage.getColorDropDown().isDisplayed())
-        assertThat(differentElementsPage.getColorDropDown().isDisplayed(), is(true));
+        assertThat("",differentElementsPage.getColorDropDown().isDisplayed());
     }
 
     public void assertDefaultButtonIsDisplayed() {
         // TODO assertThat(differentElementsPage.getDefaultButton().isDisplayed());
-        assertThat(differentElementsPage.getDefaultButton().isDisplayed(), is(true));
+        assertThat("",differentElementsPage.getDefaultButton().isDisplayed());
     }
 
     public void assertButtonIsDisplayed() {
         // TODO assertThat(differentElementsPage.getButton().isDisplayed());
-        assertThat(differentElementsPage.getButton().isDisplayed(), is(true));
+        assertThat("",differentElementsPage.getButton().isDisplayed());
     }
 
     public void assertRightPanelIsDisplayed() {
 //        TODO assertThat(differentElementsPage.getRightPanel().isDisplayed());
-        assertThat(differentElementsPage.getRightPanel().isDisplayed(), is(true));
+        assertThat("",differentElementsPage.getRightPanel().isDisplayed());
     }
 
     public void markRequiredCheckBoxes(List<String> expectCheckboxes){

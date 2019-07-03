@@ -32,7 +32,7 @@ public class Exercise2 extends BaseTest {
         differentElementsPageSteps.login(UserCredentials.PITER_CHAILOVSKII);
 
         //4.	Assert User name in the left-top side of screen that user is loggined
-        differentElementsPageSteps.assertleftPanelUserName(PITER_CHAILOVSKII.user);
+        differentElementsPageSteps.assertLeftPanelUserName(PITER_CHAILOVSKII.user);
 
         //5.	Click on "Service" subcategory in the header and check that drop down contains options
         differentElementsPageSteps.checkContainsListTopServiceDropDownOptions(SERVICE_DROP_DOWN.getItems());
