@@ -51,6 +51,7 @@ public class BaseTest {
             for (String element : metalAndColors.getSummaryRadioButtonsSelect()) {
                 temp += Integer.parseInt(element);
             }
+            // TODO You forgot {} for else
         } else temp = Integer.parseInt(METAL_AND_COLORS_SUMMARY_DEFAULT.getData());
         expectLog.add("Summary: " + temp);
 
@@ -62,17 +63,20 @@ public class BaseTest {
         if(metalAndColors.getColorsDropDownSelect() != null
                 && !metalAndColors.getColorsDropDownSelect().isEmpty()){
             expectLog.add("Color: " + metalAndColors.getColorsDropDownSelect());
+            // TODO You forgot {} for else
         } else expectLog.add("Color: Colors");
 
         if(metalAndColors.getMetalsDropDownSelect() != null
                 && !metalAndColors.getMetalsDropDownSelect().isEmpty()) {
             expectLog.add("Metal: " + metalAndColors.getMetalsDropDownSelect());
+            // TODO You forgot {} for else
         } else expectLog.add("Metal: Metals");
 
         if(metalAndColors.getVegetablesDropDownSelect() != null
                 && !metalAndColors.getVegetablesDropDownSelect().isEmpty()){
                 expectLog.add("Vegetables: " + String.join(", ", metalAndColors.getVegetablesDropDownSelect()));
-            } else expectLog.add("Vegetables:");
+            // TODO You forgot {} for else
+        } else expectLog.add("Vegetables:");
         return expectLog;
     }
 
