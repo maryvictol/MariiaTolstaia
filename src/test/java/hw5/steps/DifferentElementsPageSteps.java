@@ -1,5 +1,6 @@
 package hw5.steps;
 
+import hw5.TestProvider;
 import hw5.voids.BasePage;
 import hw5.voids.DifferentElementsPage;
 import io.qameta.allure.Step;
@@ -19,6 +20,7 @@ public class DifferentElementsPageSteps extends BasePageSteps {
 
     public DifferentElementsPageSteps(WebDriver driver) {
         super.driver = driver;
+        TestProvider.getInstance().setDriver(driver);
         differentElementsPage = new DifferentElementsPage(driver);
         basePage = new BasePage(driver);
     }

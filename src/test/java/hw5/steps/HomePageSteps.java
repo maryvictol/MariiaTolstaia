@@ -1,5 +1,6 @@
 package hw5.steps;
 
+import hw5.TestProvider;
 import hw5.voids.BasePage;
 import hw5.voids.HomePage;
 import io.qameta.allure.Step;
@@ -20,6 +21,7 @@ public class HomePageSteps extends BasePageSteps {
 
     public HomePageSteps(WebDriver driver) {
         super.driver = driver;
+        TestProvider.getInstance().setDriver(driver);
         homePage = new HomePage(driver);
         basePage = new BasePage(driver);
     }

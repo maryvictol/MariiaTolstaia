@@ -1,15 +1,20 @@
 package hw5.ex2;
 
+import hw5.AllureAttachmentListener;
 import hw5.enums.UserCredentials;
 import hw5.BaseTest;
 import hw5.steps.DifferentElementsPageSteps;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static hw5.enums.DifferentElementsPageConstant.*;
 import static hw5.enums.BasePageConstants.SERVICE_DROP_DOWN;
 import static hw5.enums.UserCredentials.PITER_CHAILOVSKII;
 
+@Listeners(AllureAttachmentListener.class)
 public class Exercise2 extends BaseTest {
 
     DifferentElementsPageSteps differentElementsPageSteps;
@@ -21,8 +26,10 @@ public class Exercise2 extends BaseTest {
         differentElementsPageSteps = new DifferentElementsPageSteps(driver);
     }
 
+    @Feature("HW 5 - Jenkins/Allure")
+    @Story("Check functionality of Different Elements Page")
     @Test
-    public void hw3_exercise2() {
+    public void hw5_exercise2() {
         //1.	Open test site by URL
 
         //2.	Assert Browser title

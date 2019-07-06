@@ -1,14 +1,19 @@
 package hw5.ex1;
 
+import hw5.AllureAttachmentListener;
 import hw5.BaseTest;
 import hw5.steps.HomePageSteps;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static hw5.enums.BasePageConstants.ITEMS_ON_HEADER_SECTION;
 import static hw5.enums.HomePageConstants.*;
 import static hw5.enums.UserCredentials.PITER_CHAILOVSKII;
 
+@Listeners(AllureAttachmentListener.class)
 public class Exercise1 extends BaseTest {
 
     HomePageSteps homePageSteps;
@@ -20,8 +25,10 @@ public class Exercise1 extends BaseTest {
         homePageSteps = new HomePageSteps(driver);
     }
 
+    @Feature("HW 5 - Jenkins/Allure")
+    @Story("Check functionality of Home Page")
     @Test
-    public void hw3_exercise1() {
+    public void hw5_exercise1() {
         //1. Open test site by URL
 
         //2. Assert Browser title
