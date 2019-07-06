@@ -51,7 +51,7 @@ public class Exercise1 extends BaseTest {
         homePageSteps.checkDisplayedListOfImagesElements(COUNT_IMAGES_ON_HOME_PAGE.getCount());
 
         //8. Assert that there are 4 texts on the Index Page under icons and they have proper text
-       // homePageSteps.checkListOfTextElements(TEXT_ON_INDEX_PAGE_UNDER_ICONS.getItems());
+        homePageSteps.checkListOfTextElements(TEXT_ON_INDEX_PAGE_UNDER_ICONS.getItems());
 
         //9. Assert a text of the main headers
         homePageSteps.checkTextFirstMainHeader(FIRST_MAIN_HEADER.getData());
