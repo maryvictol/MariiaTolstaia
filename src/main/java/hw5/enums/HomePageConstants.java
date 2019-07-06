@@ -12,7 +12,7 @@ public enum HomePageConstants {
             "To be multiplatform",
             "Already have good base\n(about 20 internal and\nsome external projects),\nwish to get more\u2026")),
 
-    FIRST_MAIN_HEADER("EPAM FRAMEWORK WISHES…"),
+    FIRST_MAIN_HEADER("EPAM FRAMEWORK WISHES\u2026"),
 
     SECOND_MAIN_HEADER("LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR" +
             " INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION " +
