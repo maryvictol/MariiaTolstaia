@@ -25,8 +25,8 @@ public class Exercise1 extends BaseTest {
         homePageSteps = new HomePageSteps(driver);
     }
 
-    @Feature("HW 5 - Jenkins/Allure")
-    @Story("Check functionality of Home Page")
+    @Feature(value = "HW 5 - Jenkins/Allure")
+    @Story(value = "Check functionality of Home Page")
     @Test
     public void hw5_exercise1() {
         //1. Open test site by URL

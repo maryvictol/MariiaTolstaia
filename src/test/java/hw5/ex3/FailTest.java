@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 
 import static hw5.enums.BasePageConstants.ITEMS_ON_HEADER_SECTION;
 import static hw5.enums.HomePageConstants.*;
-import static hw5.enums.HomePageConstants.SUBHEADER_URL;
 import static hw5.enums.UserCredentials.PITER_CHAILOVSKII;
 
 @Listeners(AllureAttachmentListener.class)
@@ -26,8 +25,8 @@ public class FailTest extends BaseTest {
         homePageSteps = new HomePageSteps(driver);
     }
 
-    @Feature("HW 5 - Jenkins/Allure")
-    @Story("Check functionality of Home Page - Fail Test")
+    @Feature(value = "HW 5 - Jenkins/Allure")
+    @Story(value = "Check functionality of Home Page - Fail Test")
     @Test
     public void hw5_failTest() {
         //1. Open test site by URL

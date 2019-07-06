@@ -26,8 +26,8 @@ public class Exercise2 extends BaseTest {
         differentElementsPageSteps = new DifferentElementsPageSteps(driver);
     }
 
-    @Feature("HW 5 - Jenkins/Allure")
-    @Story("Check functionality of Different Elements Page")
+    @Feature(value = "HW 5 - Jenkins/Allure")
+    @Story(value = "Check functionality of Different Elements Page")
     @Test
     public void hw5_exercise2() {
         //1.	Open test site by URL
