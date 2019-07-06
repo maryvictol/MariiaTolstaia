@@ -3,6 +3,9 @@ package hw3.enums;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.google.common.base.Charsets.UTF_8;
+import static java.nio.charset.StandardCharsets.ISO_8859_1;
+
 public enum HomePageConstants {
 
     COUNT_IMAGES_ON_HOME_PAGE(4),
@@ -10,7 +13,8 @@ public enum HomePageConstants {
             "To include good practices\nand ideas from successful\nEPAM project",
             "To be flexible and\ncustomizable",
             "To be multiplatform",
-            "Already have good base\n(about 20 internal and\nsome external projects),\nwish to get more…")),
+            new String("Already have good base\n(about 20 internal and\nsome external projects),\nwish to get more…"
+                    .getBytes(ISO_8859_1), UTF_8))),
 
     FIRST_MAIN_HEADER("EPAM FRAMEWORK WISHES…"),
 
