@@ -22,8 +22,6 @@ import static org.hamcrest.Matchers.hasItem;
 public class Exercise1 extends BaseTest {
 
     // TODO Field does not used)
-   protected BasePage basePage;
-
 
     @Test
     public void exercise1() {

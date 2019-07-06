@@ -52,7 +52,9 @@ public class BaseTest {
                 temp += Integer.parseInt(element);
             }
             // TODO You forgot {} for else
-        } else temp = Integer.parseInt(METAL_AND_COLORS_SUMMARY_DEFAULT.getData());
+        } else {
+            temp = Integer.parseInt(METAL_AND_COLORS_SUMMARY_DEFAULT.getData());
+        }
         expectLog.add("Summary: " + temp);
 
         if(metalAndColors.getElementsCheckBoxesSelect() != null
@@ -64,19 +66,25 @@ public class BaseTest {
                 && !metalAndColors.getColorsDropDownSelect().isEmpty()){
             expectLog.add("Color: " + metalAndColors.getColorsDropDownSelect());
             // TODO You forgot {} for else
-        } else expectLog.add("Color: Colors");
+        } else {
+            expectLog.add("Color: Colors");
+        }
 
         if(metalAndColors.getMetalsDropDownSelect() != null
                 && !metalAndColors.getMetalsDropDownSelect().isEmpty()) {
             expectLog.add("Metal: " + metalAndColors.getMetalsDropDownSelect());
             // TODO You forgot {} for else
-        } else expectLog.add("Metal: Metals");
+        } else {
+            expectLog.add("Metal: Metals");
+        }
 
         if(metalAndColors.getVegetablesDropDownSelect() != null
                 && !metalAndColors.getVegetablesDropDownSelect().isEmpty()){
                 expectLog.add("Vegetables: " + String.join(", ", metalAndColors.getVegetablesDropDownSelect()));
             // TODO You forgot {} for else
-        } else expectLog.add("Vegetables:");
+        } else {
+            expectLog.add("Vegetables:");
+        }
         return expectLog;
     }
 

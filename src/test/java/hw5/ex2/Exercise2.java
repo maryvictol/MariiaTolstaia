@@ -1,14 +1,14 @@
-package hw3.ex2;
+package hw5.ex2;
 
-import hw3.BaseTest;
-import hw3.enums.UserCredentials;
-import hw3.steps.DifferentElementsPageSteps;
+import hw5.enums.UserCredentials;
+import hw5.BaseTest;
+import hw5.steps.DifferentElementsPageSteps;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static hw3.enums.DifferentElementsPageConstant.*;
-import static hw3.enums.BasePageConstants.SERVICE_DROP_DOWN;
-import static hw3.enums.UserCredentials.PITER_CHAILOVSKII;
+import static hw5.enums.DifferentElementsPageConstant.*;
+import static hw5.enums.BasePageConstants.SERVICE_DROP_DOWN;
+import static hw5.enums.UserCredentials.PITER_CHAILOVSKII;
 
 public class Exercise2 extends BaseTest {
 
@@ -26,13 +26,13 @@ public class Exercise2 extends BaseTest {
         //1.	Open test site by URL
 
         //2.	Assert Browser title
-        differentElementsPageSteps.assertBrowserTitle("Home Page");
+        differentElementsPageSteps.checkBrowserTitle("Home Page");
 
         //3.	Perform login
         differentElementsPageSteps.login(UserCredentials.PITER_CHAILOVSKII);
 
         //4.	Assert User name in the left-top side of screen that user is loggined
-        differentElementsPageSteps.assertLeftPanelUserName(PITER_CHAILOVSKII.user);
+        differentElementsPageSteps.checkLeftPanelUserName(PITER_CHAILOVSKII.user);
 
         //5.	Click on "Service" subcategory in the header and check that drop down contains options
         differentElementsPageSteps.checkContainsListTopServiceDropDownOptions(SERVICE_DROP_DOWN.getItems());
@@ -42,7 +42,7 @@ public class Exercise2 extends BaseTest {
 
         //7.	Open through the header menu Service -> Different Elements Page
         differentElementsPageSteps.openDifferentElementsPage();
-        differentElementsPageSteps.assertBrowserTitle("Different Elements");
+        differentElementsPageSteps.checkBrowserTitle("Different Elements");
 
         //8.	Check interface on Different elements page, it contains all needed elements
         // (4 checkboxes, 4 radios, 1 dropdown, 2 buttons)

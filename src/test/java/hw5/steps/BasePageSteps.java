@@ -1,7 +1,8 @@
-package hw3.steps;
+package hw5.steps;
 
-import hw3.enums.UserCredentials;
-import hw3.voids.BasePage;
+import hw5.enums.UserCredentials;
+import hw5.voids.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -15,55 +16,58 @@ public class BasePageSteps {
     protected WebDriver driver;
     protected BasePage basePage;
 
-    // TODO Could be protected
-    // TODO I guess you forgot parameter WebDriver driver here? :)
-    /*public BasePageSteps(WebDriver driver) {
-        this.driver = driver;
-    }*/
-
+    @Step("Login as User")
     public void login(UserCredentials user) {
         basePage.login(user);
     }
 
-    public void assertBrowserTitle (String expectTitle){
+    @Step("Check Browser Title")
+    public void checkBrowserTitle(String expectTitle){
         assertThat(basePage.getBrowserTitle(), equalTo(expectTitle));
     }
 
-    // TODO checkLeftPanelUserName
-    public void assertLeftPanelUserName (String expectTitle){
+    @Step("Check Left Panel User Name")
+    public void checkLeftPanelUserName(String expectTitle){
         assertThat(basePage.getLeftPanelUserName(), equalTo(expectTitle));
     }
 
+    @Step("Check Menu Header Section Items")
     public void checkMenuHeaderSectionItems (List<String> expectListElement) {
         checkListOfTextElements(basePage.getMenuHeaderSectionItems(),expectListElement);
     }
 
+    @Step("Check Text on Page")
     public void checkTextOnPage(WebElement actualText, String expectText) {
         assertThat(actualText.isDisplayed(), is(true));
         assertThat(actualText.getText(), equalTo(expectText));
     }
 
+    @Step("Check Left Panel is Displayed")
     public void checkLeftPanelIsDisplayed() {
         assertThat(basePage.getLeftPanel().isDisplayed(), is(true));
     }
 
+    @Step("Check Footer is Displayed")
     public void checkFooter() {
         assertThat("",basePage.getFooter().isDisplayed());
     }
 
+    @Step("Check Contains List Top Service DropDown Options")
     public void checkContainsListTopServiceDropDownOptions(List<String> expectListElements){
         checkContainListOfElements(basePage.getTopServiceDropDownOptions(), expectListElements);
     }
 
+    @Step("Check Contains List Left Service DropDown Options")
     public void checkContainsListLeftServiceDropDownOptions(List<String> expectListElements){
         checkContainListOfElements(basePage.getLeftServiceDropDownOptions(), expectListElements);
     }
 
+    @Step("Open Different Elements Page")
     public  void openDifferentElementsPage(){
         basePage.openDifferentElementsTab();
     }
 
-
+    @Step("Check List of Text Elements")
     public void checkListOfTextElements(List<WebElement> elements, List<String> expectListElements) {
         List<String> listElements = elements
                 .stream()
@@ -72,6 +76,7 @@ public class BasePageSteps {
         assertThat(listElements, equalTo(expectListElements));
     }
 
+    @Step("Check Contain List of Elements")
     public void checkContainListOfElements(List<WebElement> elements, List<String> expectListElements) {
         List<String> listElements = elements
                 .stream()
