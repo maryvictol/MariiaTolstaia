@@ -4,6 +4,7 @@
         <classes>
             <class name="hw5.ex1.Exercise1"/>
             <class name="hw5.ex2.Exercise2"/>
+            <class name="hw5.ex3.FailTest"/>
         </classes>
     </test>
 </suite>
