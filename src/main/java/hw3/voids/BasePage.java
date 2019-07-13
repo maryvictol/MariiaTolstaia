@@ -67,7 +67,7 @@ public class BasePage {
         return driver.getTitle();
     }
 
-    // TODO getLeftPanelUserName
+    // TODO getTopPanelUserName
     public String getLeftPanelUserName() {
         return leftPanelUserName.getText();
     }

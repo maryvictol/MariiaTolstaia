@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite8">
+
+    <test name="hw6BDDTests">
+        <packages>
+            <package name = "hw6"/>
+        </packages>
+    </test>
+
+</suite>

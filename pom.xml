@@ -15,6 +15,7 @@
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <allure.version>2.12.1</allure.version>
         <aspectj.version>1.8.10</aspectj.version>
+        <cucumber.version>1.2.5</cucumber.version>
     </properties>
 
     <profiles>
@@ -81,10 +82,20 @@
         <profile>
             <id>hw5AllTests</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.xml>src/test/resources/hw5AllTests.xml</suite.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>hwBDDTests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/hw6BDDTests.xml</suite.xml>
             </properties>
         </profile>
 
@@ -156,6 +167,21 @@
             <artifactId>jackson-annotations</artifactId>
             <version>2.9.9</version>
         </dependency>
+
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
