@@ -28,8 +28,10 @@ Feature: Exercise 1
         | PERFOMANCE         |
     When Open through the header menu Service 'different-elements' Page
     Then Check interface on Different elements page
+    # TODO On the which page these section is located?
     And Check that there is Right Section
     And Check that there is Left Section
+    # TODO It is better to add page name for the these actions
     When I mark 'Water' checkbox on Different Elements page
     Then Check that log shows status 'true' for 'Water' checkbox
     When I mark 'Wind' checkbox on Different Elements page
