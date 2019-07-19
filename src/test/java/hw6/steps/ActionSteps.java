@@ -17,6 +17,7 @@ public class ActionSteps extends BaseStep{
     }
 
     @When("Click on '([^\"]*)' subcategory in the header")
+    // TODO input parameter is unused
     public void clickOnSubcategoryInHeader(String subcategory){
         basePage.getTopServiceDropDown().click();
     }

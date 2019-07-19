@@ -1,3 +1,4 @@
+// TODO commonPackage should be in the lower case
 package hw6.commonPackage;
 
 import lombok.Getter;
@@ -7,6 +8,8 @@ import java.util.Objects;
 
 @Getter
 @Setter
+// TODO It is better store this entity in the main source code scope
+// TODO I think that here you could you @Data annotation for the object
 public class UserEntity {
     private String number;
     private String user;
