@@ -50,7 +50,7 @@ public class Exercise1 extends BaseTest {
         TableWithPagesPage tableWithPagesPage = new TableWithPagesPage();
         checkBrowserTitle(TABLE_WITH_PAGES_TITLE.getData());
 
-        //8	Check that default value for “Show entries” dropdown is 5
+        //8	Check that default value for Show entries drop-down is 5
         tableWithPagesPage.getShowEntriesDropdown()
                 .shouldHave(Condition.text(Integer.toString(SHOW_ENTYTIES_DEFAULT_VALUE.getValue())));
 
@@ -60,7 +60,7 @@ public class Exercise1 extends BaseTest {
         //10	Assert that there is Left Section
         tableWithPagesPage.getLeftPanel().shouldBe(visible);
 
-        //11	Select new value for the entries in the dropdown list
+        //11	Select new value for the entries in the drop-down list
         tableWithPagesPage.setShowEntries(Integer.toString(SHOW_ENTYTIES_SELECTED_VALUE.getValue()));
         tableWithPagesPage.getShowEntriesDropdown()
                 .shouldHave(Condition.text(Integer.toString(SHOW_ENTYTIES_SELECTED_VALUE.getValue())));
@@ -74,7 +74,7 @@ public class Exercise1 extends BaseTest {
         tableWithPagesPage.getRowsInTable()
                 .shouldHave(CollectionCondition.size(SHOW_ENTYTIES_SELECTED_VALUE.getValue()));
 
-        //14	Type in “Search” text field
+        //14	Type in Search text field
         tableWithPagesPage.setSearchField(SEARCH_VALUE.getData());
 
         //15	Assert the table contains only records with Search field value

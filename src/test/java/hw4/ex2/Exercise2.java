@@ -35,7 +35,7 @@ public class Exercise2 extends BaseTest {
         MetalAndColorsPage metalAndColorsPage = new MetalAndColorsPage();
         metalAndColorsPage.fillMetalAndColorsForm(metalAndColorsLombok);
 
-        //7	Click “Submit” button
+        //7	Click Submit button
         metalAndColorsPage.getSubmitButton().click();
 
         //8	Check Results block output on the right-side
