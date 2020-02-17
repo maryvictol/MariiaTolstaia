@@ -95,7 +95,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.xml>src/test/resources/hw6/hw6BDDTests.xml</suite.xml>
+                <suite.xml>src/test/resources/hw6BDDTests.xml</suite.xml>
             </properties>
         </profile>
 
