@@ -16,10 +16,7 @@ public class BaseTest {
 
     @BeforeSuite
     public void setUpDriverPath() {
-//        WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver",
-                Paths.get("src/test/resources/driver/chromedriver.exe")
-                        .toAbsolutePath().toString());
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeMethod
